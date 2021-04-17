@@ -1,24 +1,28 @@
-# README
+# API Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este é um projeto feito em Ruby e Ruby on Rails com o intuito para estudos, é uma API de um pequeno blog.
+## O que foi utilizado.
 
-Things you may want to cover:
+![ruby](https://img.shields.io/badge/Ruby-2.7-red.svg) <br />
+![rails](https://img.shields.io/badge/Rails-6.0.3-red.svg) <br />
+![gem](https://img.shields.io/badge/Gem-active_model_serializers_0.10.12-yellow.svg) <br />
 
-* Ruby version
+## Criando o Projeto
+- rails new blog_api --api
+- Criar repositório no git com o nome do projeto ou clonar este.
+- rails g scaffold User name email nickname
+- rails db:migrate
+- rails db:seed (Obs: criei um seed só para teste e está neste projeto)
+- rails g scaffold Post title content user:references
+- rails db:migrate
+- Add gem (gem 'active_model_serializers', '~> 0.10.12') no Gemfile
+- Rodar o 'bundle' para instalar a Gem nova.
+- Depois da gem instalada criar os serializers -> rails g serializer user e rails g serializer Post
+- No serializer do user adicionar 'has_many :posts' e no serializer do posts adicionar 'belongs_to :user'
+- Ajustar a versão da API
 
-* System dependencies
+## Para utilizar este projeto
 
-* Configuration
+* Clonar o projeto
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Rodar o bundle
